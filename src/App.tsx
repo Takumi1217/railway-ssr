@@ -1,24 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+type ProfileProps = {
+  name: string;
+  description: string;
+  hobbies: string[];
+};
+
+const Profile: React.FC<ProfileProps> = ({ name, description, hobbies }) => {
+  return (
+    <div className="profile">
+      <h1>{name}</h1>
+      <p>{description}</p>
+      <h2>Hobbies</h2>
+      <ul>
+        {hobbies.map((hobby, index) => (
+          <li key={index}>{hobby}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const App: React.FC = () => {
+  const myProfile = {
+    name: "Takumi Yokono",
+    description: "I'm a 21 year old vocational school student.",
+    hobbies: ["Reading", "Gaming", "Tennis"]
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profile 
+        name={myProfile.name}
+        description={myProfile.description}
+        hobbies={myProfile.hobbies}
+      />
     </div>
   );
 }
