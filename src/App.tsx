@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 type ProfileProps = {
   name: string;
@@ -12,7 +12,7 @@ const Profile: React.FC<ProfileProps> = ({ name, description, hobbies }) => {
     <div className="profile">
       <h1>{name}</h1>
       <p>{description}</p>
-      <h2>Hobbies</h2>
+      <h2>趣味</h2>
       <ul>
         {hobbies.map((hobby, index) => (
           <li key={index}>{hobby}</li>
@@ -24,20 +24,20 @@ const Profile: React.FC<ProfileProps> = ({ name, description, hobbies }) => {
 
 const App: React.FC = () => {
   const myProfile = {
-    name: "Takumi Yokono",
-    description: "I'm a 21 year old vocational school student.",
-    hobbies: ["Reading", "Gaming", "Tennis"]
+    name: "横野匠未",
+    description: "21歳の学生。",
+    hobbies: ["読書", "ゲーム", "テニス"],
   };
 
   return (
     <div className="App">
-      <Profile 
+      <Profile
         name={myProfile.name}
         description={myProfile.description}
         hobbies={myProfile.hobbies}
       />
     </div>
   );
-}
+};
 
 export default App;

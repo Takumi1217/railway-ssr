@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start-server": "node server/index.js",
+    "start-server": "node server/index.mjs",
     "build-server": "webpack --config webpack.config.js",
     "dist-server": "node dist/server.js"
   },
